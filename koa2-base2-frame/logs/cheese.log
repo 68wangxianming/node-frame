@@ -1,0 +1,23 @@
+[2019-04-15T14:15:43.404] [ERROR] cheese - Cheese is too ripe!
+[2019-04-15T16:15:27.104] [ERROR] cheese - ReferenceError: data is not defined
+    at /Users/wangxianming/personal-project/node-frame/koa2-base2-frame/controllers/IndexController.js:9:17
+    at dispatch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/node_modules/koa-compose/index.js:45:18)
+    at /Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/lib/router.js:346:16
+    at dispatch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/node_modules/koa-compose/index.js:44:32)
+    at /Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/lib/router.js:351:31)
+    at dispatch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-compose/index.js:42:32)
+    at app.use (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/middleware/errorHandler.js:16:19)
+    at dispatch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-compose/index.js:42:32)
+[2019-04-15T16:16:09.631] [ERROR] cheese - ReferenceError: data is not defined
+    at /Users/wangxianming/personal-project/node-frame/koa2-base2-frame/controllers/IndexController.js:9:17
+    at dispatch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/node_modules/koa-compose/index.js:45:18)
+    at /Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/lib/router.js:346:16
+    at dispatch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/node_modules/koa-compose/index.js:44:32)
+    at /Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/lib/router.js:351:31)
+    at dispatch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-compose/index.js:42:32)
+    at app.use (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/middleware/errorHandler.js:16:19)
+    at dispatch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-compose/index.js:42:32)

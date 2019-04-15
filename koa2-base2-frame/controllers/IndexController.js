@@ -3,8 +3,11 @@ class IndexController {
     }
 
     actionIndex() {
-        return (ctx, next) => {
-            ctx.body = 'Hello world!';
+        return async (ctx, next) => {
+            const data = '图书管理系统';
+            ctx.body = await ctx.render("index", {
+                data
+            })
         }
     }
 }
