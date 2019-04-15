@@ -2,6 +2,7 @@
 node_modules
 /dist
 .idea
+./koa2-base1-frame/.idea
 
 # local env files
 .env.local
