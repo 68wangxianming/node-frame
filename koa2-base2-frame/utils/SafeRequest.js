@@ -1,5 +1,5 @@
-const fetch = require('node-fetch');
-const config = require('../config');
+const fetch = require("node-fetch");
+const config = require("../config");
 
 class SafeRequest {
     constructor(url) {
@@ -8,7 +8,14 @@ class SafeRequest {
     }
 
     fetch(options) {
-        let $http = fetch(this.baseUrl + url);
+        let $http = fetch(this.baseUrl + this.url);
+        if (options) {
+            const body = {a: 1};
+            $http = fetch(this.baseUrl + this.url, {
+                method: options.method,
+                body: options.params,
+            });
+        }
         return new Promise((resolve, reject) => {
             let result = {
                 code: 0,
@@ -31,6 +38,7 @@ class SafeRequest {
                     resolve(result);
                 })
                 .catch((error) => {
+                    console.log(error);
                     result.code = 1;
                     result.message = 'node-fetch 通讯异常！';
                     reject(result);

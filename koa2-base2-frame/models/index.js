@@ -26,8 +26,23 @@ class Index {
      * getData(options)
      */
     getData(options) {
-        const safeRequest = new SafeRequest('books/index');
-        return safeRequest.fetch({})
+        const safeRequest = new SafeRequest("books/index");
+        return safeRequest.fetch({});
+    }
+
+    /**
+     * 把用户传过来的数据保存进入借口
+     * @param {*} options 配置项
+     * @example
+     * return new Promise
+     * saveData(options)
+     */
+    saveData(options) {
+        const safeRequest = new SafeRequest("books/create");
+        return safeRequest.fetch({
+            method: "POST",
+            params: options.params
+        });
     }
 }
 

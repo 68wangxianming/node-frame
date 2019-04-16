@@ -1,6 +1,7 @@
-[2019-04-15T14:15:43.404] [ERROR] cheese - Cheese is too ripe!
-[2019-04-15T16:15:27.104] [ERROR] cheese - ReferenceError: data is not defined
-    at /Users/wangxianming/personal-project/node-frame/koa2-base2-frame/controllers/IndexController.js:9:17
+[2019-04-16T12:11:20.870] [ERROR] cheese - ReferenceError: url is not defined
+    at SafeRequest.fetch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/utils/SafeRequest.js:11:42)
+    at Index.getData (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/models/index.js:30:28)
+    at /Users/wangxianming/personal-project/node-frame/koa2-base2-frame/controllers/IndexController.js:10:40
     at dispatch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/node_modules/koa-compose/index.js:44:32)
     at next (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/node_modules/koa-compose/index.js:45:18)
     at /Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/lib/router.js:346:16
@@ -8,10 +9,10 @@
     at /Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/node_modules/koa-compose/index.js:36:12
     at dispatch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/lib/router.js:351:31)
     at dispatch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-compose/index.js:42:32)
-    at app.use (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/middleware/errorHandler.js:16:19)
-    at dispatch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-compose/index.js:42:32)
-[2019-04-15T16:16:09.631] [ERROR] cheese - ReferenceError: data is not defined
-    at /Users/wangxianming/personal-project/node-frame/koa2-base2-frame/controllers/IndexController.js:9:17
+[2019-04-16T12:11:53.677] [ERROR] cheese - ReferenceError: url is not defined
+    at SafeRequest.fetch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/utils/SafeRequest.js:11:42)
+    at Index.getData (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/models/index.js:30:28)
+    at /Users/wangxianming/personal-project/node-frame/koa2-base2-frame/controllers/IndexController.js:10:40
     at dispatch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/node_modules/koa-compose/index.js:44:32)
     at next (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/node_modules/koa-compose/index.js:45:18)
     at /Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/lib/router.js:346:16
@@ -19,5 +20,5 @@
     at /Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/node_modules/koa-compose/index.js:36:12
     at dispatch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-router/lib/router.js:351:31)
     at dispatch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-compose/index.js:42:32)
-    at app.use (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/middleware/errorHandler.js:16:19)
-    at dispatch (/Users/wangxianming/personal-project/node-frame/koa2-base2-frame/node_modules/koa-compose/index.js:42:32)
+[2019-04-16T12:12:38.416] [ERROR] cheese - { code: 1, message: 'node-fetch 通讯异常！', data: [] }
+[2019-04-16T12:13:03.108] [ERROR] cheese - { code: 1, message: 'node-fetch 通讯异常！', data: [] }
