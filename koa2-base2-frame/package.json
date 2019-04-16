@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=development supervisor ./app.js"
+    "build": "babel ./assets/scripts/add.js --out-file ./assets/scripts/add-bundle.js",
+    "dev": "cross-env NODE_ENV=development supervisor ./app.js",
+    "docs": "jsdoc ./**/*.js -d ./docs/jsdocs"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +20,12 @@
     "koa-swig": "^2.2.1",
     "lodash": "^4.17.11",
     "log4js": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-transform-modules-systemjs": "^7.4.0",
+    "@babel/preset-env": "^7.4.3",
+    "jsdoc": "^3.5.5"
   }
 }

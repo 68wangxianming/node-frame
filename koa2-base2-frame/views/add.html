@@ -1,0 +1,26 @@
+{% extends './layout.html' %}
+{% block styles %}
+<link rel="stylesheet" href="/styles/add.css">
+{% endblock %}
+{% block title %} 添加图书 📖 {% endblock %}
+{% block content %}
+<div id="test">
+    <p>{{message}}</p>
+    <input type="text" v-model="message">
+</div>
+{% endblock %}
+{% block scripts %}
+<script type="nomodule">
+    import ('/scripts/add.js').then((_) => {
+        const create = new _.default;
+        create.fn();
+    })
+</script>
+<script type="module" src="https://cdn.bootcss.com/systemjs/3.1.2/s.js"></script>
+<script type="module">
+    System.import('/scripts/add-bundle.js').then((_) => {
+        const create = new _.default;
+        create.fn();
+    })
+</script>
+{% endblock %}
