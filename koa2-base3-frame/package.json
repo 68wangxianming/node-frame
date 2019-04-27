@@ -4,10 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "pretest": "echo \"🍎🍎🍎🍎🍎🍎🍎$LOGNAME\"",
+    "test": "echo \"🍌test\" & exit 0",
+    "start": "echo \"🍎$LOGNAME\" ",
     "build": "babel ./assets/scripts/add.js --out-file ./assets/scripts/add-bundle.js",
-    "dev": "cross-env NODE_ENV=development supervisor ./app.js",
+    "test:dev": "npm-run-all --parallel test dev",
+    "es:build": "babel ./assets/scripts/add.js --out-file ./assets/scripts/add-bundle.js",
+    "server:start": "scripty",
+    "server:dev": "scripty",
+    "server:prod": "scripty",
+    "server:hint": "scripty",
+    "client:dev": "scripty",
+    "client:prod": "scripty",
     "docs": "jsdoc ./**/*.js -d ./docs/jsdocs"
   },
   "keywords": [],
@@ -15,6 +22,7 @@
   "license": "ISC",
   "dependencies": {
     "cross-env": "^5.2.0",
+    "form-data": "^2.3.3",
     "koa": "^2.7.0",
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
@@ -22,13 +30,16 @@
     "lodash": "^4.17.11",
     "log4js": "^4.1.0",
     "node-fetch": "^2.3.0",
-    "form-data": "^2.3.3"
+    "webpack": "^4.30.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
     "@babel/plugin-transform-modules-systemjs": "^7.4.0",
     "@babel/preset-env": "^7.4.3",
-    "jsdoc": "^3.5.5"
+    "jsdoc": "^3.5.5",
+    "npm-run-all": "^4.1.5",
+    "scripty": "^1.9.1",
+    "webpack-cli": "^3.3.1"
   }
 }
