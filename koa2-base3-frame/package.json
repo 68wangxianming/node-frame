@@ -1,0 +1,34 @@
+{
+  "name": "koa2-base1-frame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pretest": "echo \"🍎🍎🍎🍎🍎🍎🍎$LOGNAME\"",
+    "build": "babel ./assets/scripts/add.js --out-file ./assets/scripts/add-bundle.js",
+    "dev": "cross-env NODE_ENV=development supervisor ./app.js",
+    "docs": "jsdoc ./**/*.js -d ./docs/jsdocs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa-swig": "^2.2.1",
+    "lodash": "^4.17.11",
+    "log4js": "^4.1.0",
+    "node-fetch": "^2.3.0",
+    "form-data": "^2.3.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-transform-modules-systemjs": "^7.4.0",
+    "@babel/preset-env": "^7.4.3",
+    "jsdoc": "^3.5.5"
+  }
+}

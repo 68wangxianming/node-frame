@@ -1,0 +1,30 @@
+{% extends './layout.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="/styles/index.css">
+{% endblock %}
+
+{% block title %} [[data]] 📖 {% endblock %}
+
+{% block content %}
+<!--<h1>[[data]]</h1>-->
+
+    <table class="table table-bordered">
+        {% for item in data%}
+        <tr>
+            <td>[[item.id]]</td>
+            <td>[[item.name]]</td>
+            <td>[[item.author]]</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+<div id="test">
+    <p>{{message}}</p>
+    <input type="text" v-model="message">
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/scripts/index.js"></script>
+{% endblock %}
