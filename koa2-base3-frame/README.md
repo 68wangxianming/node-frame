@@ -33,7 +33,7 @@ npm install --save-dev scripty
 "server:hint": "scripty",
 "client:dev": "scripty",
 
-chmod -R a+x scripts
+
 npm run server:start
 
 **easy shell**
@@ -49,5 +49,32 @@ do
 done
 echo ${base_port}
 ```
+```
+#!/usr/bin/env bash
+base_port="80"
+check_port=`lsof -i:${base_port} | wc -l`
+echo $check_port
+while [ $check_port -gt 0 ]
+do
+  base_port=`expr $base_port + 1`
+  check_port=`lsof -i:${base_port} | wc -l`
+done
+echo ${base_port}
+```
+
+### 前后端配置
+gulp 小任务+简单
+rollup 适合前端的库 react vue
+webpack 打包工具 bundle
+
+### 配置web端
+#### webpack配置
+
+### 配置server端
+#### gulp流清洗
+将app.js和config换成import
+
+
+
 
 

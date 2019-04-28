@@ -1,11 +1,12 @@
-const Koa = require("koa");
+import Koa from "koa";
 const app = new Koa();
-const co = require("co");
-const render = require('koa-swig');
-const serve = require('koa-static');
-const errorHandler = require("./middleware/errorHandler");
-const log4js = require('log4js');
-const config = require("./config")
+import co from "co";
+import render from 'koa-swig';
+import serve from 'koa-static';
+import errorHandler from "./middleware/errorHandler";
+import log4js from 'log4js';
+import config from "./config"
+import Controllers from "./controllers"
 
 app.use(serve(config.staticDir));
 
@@ -27,7 +28,7 @@ log4js.configure({
 const logger = log4js.getLogger('cheese');
 errorHandler.error(app, logger);
 
-require('./controllers')(app);
+Controllers(app);
 app.listen(config.port, () => {
     console.log('Server Start 🐶！');
 });
