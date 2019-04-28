@@ -4,6 +4,15 @@ let config = {
     "viewDir": join(__dirname, "..", 'views'),
     "staticDir": join(__dirname, "..", 'assets')
 };
+
+if(false) {
+    console.log('测试gulp-rollup数据清洗🚄🚄🚄🚄🚄🚄🚄🚄🚄🚄🚄🚄🚄');
+}
+
+if(process.env.NODE_ENV == "hint") {
+
+}
+
 if (process.env.NODE_ENV == "development") {
     const localConfig = {
         port: 3000,
@@ -18,4 +27,5 @@ if (process.env.NODE_ENV == "production") {
     }
     config = extend(config, prodConfig);
 }
+
 module.exports = config;

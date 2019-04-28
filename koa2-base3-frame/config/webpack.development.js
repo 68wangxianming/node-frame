@@ -1,1 +1,1 @@
-console.log('development 启动🍎');
+module.exports = {};
