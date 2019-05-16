@@ -87,7 +87,25 @@ npm run server:start
 
 ![Image text](https://github.com/68wangxianming/node-frame/blob/master/source-material/WX20190516-222410%402x.png)
 
-执行两遍books-index.bundle.js并产生报错  
+执行两遍books-index.bundle.js并产生报错   
+
+修改webpack.development.js
+output:{  
+    publicPath:'/'  
+}  
+watch:true  
+接下来用x-tag来处理服务端渲染和客户端渲染的问题  
+
+```javascript  
+<script src="https://cdn.staticfile.org/jquery.pjax/2.0.1/jquery.pjax.js"></script>  
+<script src="https://cdn.staticfile.org/quicklink/1.0.0/quicklink.js"></script>  
+<script>  
+    $(document).pjax("a", "#app");  
+</script>  
+```  
+使用pjax对页面a进行绑定
+
+
 
 
 
