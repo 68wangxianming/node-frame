@@ -3,10 +3,10 @@
 **npm run env**
 LOGNAME 可以拿到用户名
 
-**钩子**
+**钩子**  
 "pretest": "echo \"🍎🍎🍎🍎🍎🍎🍎$LOGNAME\"",
 
-**自己设置变量**
+**自己设置变量**  
 "config":{
     "port":3000
 }
@@ -15,17 +15,17 @@ LOGNAME 可以拿到用户名
 
 exit 0正常退出 1有错退出
 
-**&&串行 和 &并行**
+**&&串行 和 &并行**  
 "test": "echo \"🍌test\" & exit 0",
 "dev": "echo \"🍎$LOGNAME\" ",
 "client:dev": "npm run test & npm run dev",
 
-**npm-run-all**
+**npm-run-all**  
 https://www.npmjs.com/package/npm-run-all
 "client:dev": "npm-run-all test dev",
 "client:dev": "npm-run-all --parallel test dev",
 
-### 配置shell文件
+### 配置shell文件  
 **scripty**
 npm install --save-dev scripty
 "server:start": "scripty",
