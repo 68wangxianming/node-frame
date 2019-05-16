@@ -212,14 +212,22 @@ basket.js  https://github.com/68wangxianming/basket.js
 再将<script src="/scripts/runtime.bundle.js"></script><script src="/scripts/books-add.bundle.js"></script>    
 存入localstorage点击切换spa页面时，页面几乎不请求数据   
 
-![Image text](https://github.com/68wangxianming/node-frame/blob/master/source-material/WX20190516-222410%402x.png)  
-![Image text](https://github.com/68wangxianming/node-frame/blob/master/source-material/WX20190516-222410%402x.png)  
+![Image text](https://github.com/68wangxianming/node-frame/blob/master/source-material/1558024863005.jpg)  
+    
+    
+![Image text](https://github.com/68wangxianming/node-frame/blob/master/source-material/1558024892918.jpg)  
 
 但是从首页切入到add页面时候会加载一个books-add.bundle.js   
+    
+    
+![Image text](https://github.com/68wangxianming/node-frame/blob/master/source-material/1558025120329.jpg)  
+     
+    
 使用quicklink避免掉   
-![Image text](https://github.com/68wangxianming/node-frame/blob/master/source-material/WX20190516-222410%402x.png)  
+
+![Image text](https://github.com/68wangxianming/node-frame/blob/master/source-material/WX20190517-004850@2x.png)  
 ```javascript
-<!--<script src="https://cdn.staticfile.org/quicklink/1.0.0/quicklink.js"></script>-->
+<script src="https://cdn.staticfile.org/quicklink/1.0.0/quicklink.js"></script>
 <script>
     $(document).pjax("a", "#app");
     // quicklink({
