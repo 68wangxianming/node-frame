@@ -89,12 +89,12 @@ npm run server:start
 
 执行两遍books-index.bundle.js并产生报错   
 
-修改webpack.development.js
+修改webpack.development.js  
 output:{  
     publicPath:'/'  
 }  
 watch:true  
-接下来用x-tag来处理服务端渲染和客户端渲染的问题  
+接下来用pjax来处理服务端渲染和客户端渲染的问题  
 
 ```javascript  
 <script src="https://cdn.staticfile.org/jquery.pjax/2.0.1/jquery.pjax.js"></script>  
@@ -104,6 +104,114 @@ watch:true
 </script>  
 ```  
 使用pjax对页面a进行绑定
+
+node服务端渲染controllers中   
+```javascript
+if (ctx.request.header["x-pjax"]) {
+    //这个时候我们就渲染一个json
+    //在多页的站内切页面
+    console.log('将ssr合成spa');
+}else {
+    //请求落地页面
+    console.log('落地页直接刷新');
+}
+```  
+add.html注册一个Web Components组件     
+http://x-tag.github.io/  
+```javascript
+<div class="components-add pjaxcontent">
+    <x-add></x-add>
+</div>
+```  
+```javascript
+<div class="components-add pjaxcontent">
+    <x-add></x-add>
+</div>
+
+// import "./add.css";
+const add = {
+    init() {
+        console.log("🍎init");
+        xtag.create("x-add", class extends XTagElement {
+            constructor() {
+                super();
+            }
+            '::template(true)'() {
+                return `<form>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">书名</label>
+                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="请输入书名">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputFile">作者</label>
+                  <input class="form-control" type="text" id="exampleInputFile" placeholder="请输入作者">
+                </div>
+                <button  id="add-btn" class="btn btn-default">提交</button>
+              </form>`
+            }
+            'click::event'(e) {
+                if (e.target.id == "add-btn") {
+                    alert("请求添加新闻")
+                }
+            }
+        });
+
+    }
+}
+export default add;
+```  
+修改node服务端渲染controllers中   
+```javascript
+const html = await ctx.render("books/pages/add");
+if (ctx.request.header["x-pjax"]) {
+    //这个时候我们就渲染 一段json
+    //在多页的站内切页面
+    const $ = cheerio.load(html);
+    //后台合成内容
+    let _result = "";
+    // console.log("将SSR合成SPA");
+    $(".pjaxcontent").each(function () {
+        _result += $(this).html();
+    });
+    $(".lazyload-js").each(function () {
+        _result += `<script src="${$(this).attr("src")}"></script>`;
+    });
+    ctx.body = _result;
+} else {
+    console.log("落地页");
+    ctx.body = html;
+}
+```   
+
+修改webpack插件HtmlAfterWebpackPlugin   
+```javascript
+//静态资源处理小函数
+const assetsHelp = (data) => {
+    let js = [];
+    let css = [];
+
+    const dir = {
+        js: item => `<script class="lazyload-js" src="${item}"></script>`,
+        css: item => `<link class="lazyload-css" rel="stylesheet" href="${item}">`
+    };
+
+    for (let jsitem of data.js) {
+        js.push(dir.js(jsitem))
+    }
+
+    for (let cssitem of data.css) {
+        css.push(dir.css(cssitem))
+    }
+
+    return {
+        js, css
+    }
+}
+```   
+
+再将<script src="/scripts/runtime.bundle.js"></script><script src="/scripts/books-add.bundle.js"></script>    
+存入localstorage点击切换spa页面时，页面几乎不请求数据   
+
 
 
 
