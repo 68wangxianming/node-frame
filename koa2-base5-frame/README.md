@@ -1,4 +1,5 @@
-### package.json
+### package.json 的使用
+
 **npm run env**
 LOGNAME 可以拿到用户名
 
@@ -10,8 +11,8 @@ LOGNAME 可以拿到用户名
     "port":3000
 }
 "pretest": "echo \"🍎🍎🍎$LOGNAME\" && echo \"🍎🍎🍎$npm_package_config_port\"",
-
 "test": "echo \"Error: no test specified\" && exit 1",
+
 exit 0正常退出 1有错退出
 
 **&&串行 和 &并行**
@@ -24,7 +25,7 @@ https://www.npmjs.com/package/npm-run-all
 "client:dev": "npm-run-all test dev",
 "client:dev": "npm-run-all --parallel test dev",
 
-### shell文件
+### 配置shell文件
 **scripty**
 npm install --save-dev scripty
 "server:start": "scripty",
@@ -33,10 +34,9 @@ npm install --save-dev scripty
 "server:hint": "scripty",
 "client:dev": "scripty",
 
+eg: npm run server:start
 
-npm run server:start
-
-**easy shell**
+**编写easy shell**
 lsof -i :80 | awk '{print $2}'
 ```
 #!/usr/bin/env bash
@@ -61,9 +61,10 @@ do
 done
 echo ${base_port}
 ```
+eg: 处理启动时端口占用问题
 
 ### 前后端配置
-gulp 小任务+简单
+gulp 适合node小任务简单
 rollup 适合前端的库 react vue
 webpack 打包工具 bundle
 
@@ -73,7 +74,6 @@ webpack 打包工具 bundle
 ### 配置server端
 #### gulp流清洗
 将app.js和config换成import
-
 
 ### 启动
 运行basic文件夹php环境提供数据接口
@@ -86,6 +86,8 @@ npm run server:dev
 npm run server:start
 
 ![Image text](https://github.com/68wangxianming/node-frame/blob/master/source-material/WX20190516-222410%402x.png)
+
+执行两遍books-index.bundle.js并产生报错
 
 
 
