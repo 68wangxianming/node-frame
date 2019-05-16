@@ -4,9 +4,9 @@
 {% endblock %}
 {% block title %} 添加图书 📖 {% endblock %}
 {% block content %}
-    {% include "../../../components/banner/banner.html" %}
+    <!--{% include "../../../components/banner/banner.html" %}-->
     {% include "../../../components/add/add.html" %}
 {% endblock %}
 {% block scripts %}
-    <script src="../../../assets/scripts/runtime.bundle.js"></script><script src="../../../assets/scripts/books-add.bundle.js"></script>
+    <script class="lazyload-js" src="/scripts/runtime.bundle.js"></script><script class="lazyload-js" src="/scripts/books-add.bundle.js"></script>
 {% endblock %}
