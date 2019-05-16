@@ -14,7 +14,7 @@ class IndexController {
       // const data = '图书管理系统';
 
       const data = result.data;
-      ctx.body = await ctx.render("index", {
+      ctx.body = await ctx.render("books/pages/index", {
         data
       });
     };

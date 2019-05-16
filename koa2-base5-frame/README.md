@@ -75,6 +75,37 @@ webpack 打包工具 bundle
 将app.js和config换成import
 
 
+### 启动
+运行basic文件夹php环境提供数据接口
+php yii serve 127.0.0.1:8080
+打包前端
+npm run client:dev
+打包后端
+npm run server:dev
+启动3000端口访问
+npm run server:start
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
