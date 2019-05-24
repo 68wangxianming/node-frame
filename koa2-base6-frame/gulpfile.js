@@ -4,9 +4,8 @@ const watch = require('gulp-watch');
 const rollup = require('gulp-rollup');
 const replace = require('rollup-plugin-replace');
 const entry = "./src/server/**/*.js";
-const cleanEntry = "./src/server/config/index.js";
+const cleanEntry = "./src/server/config/IndexService.js";
 const eslint = require('gulp-eslint');
-
 
 
 //开发环境
@@ -15,7 +14,9 @@ function builddev() {
         gulp.src(entry)
             .pipe(babel({
                 babelrc: false,
-                "plugins": ["@babel/plugin-transform-modules-commonjs"]
+                "plugins": ["@babel/plugin-transform-modules-commonjs", ["@babel/plugin-proposal-decorators", {
+                    legacy: true
+                }]]
             }))
             .pipe(gulp.dest('dist'));
     })
@@ -27,7 +28,9 @@ function buildprod() {
         .pipe(babel({
             babelrc: false,
             ignore: [cleanEntry],
-            "plugins": ["@babel/plugin-transform-modules-commonjs"]
+            "plugins": ["@babel/plugin-transform-modules-commonjs", ["@babel/plugin-proposal-decorators", {
+                legacy: true
+            }]]
         }))
         .pipe(gulp.dest('dist'));
 }

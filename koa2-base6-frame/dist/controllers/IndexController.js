@@ -1,61 +1,21 @@
 "use strict";
 
-const Index = require('../models/index');
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
-const FormData = require('form-data');
+var _awilixKoa = require("awilix-koa");
 
-const cheerio = require('cheerio');
+var _dec, _dec2, _dec3, _class, _class2;
 
-class IndexController {
-  constructor() {}
+function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) { var desc = {}; Object.keys(descriptor).forEach(function (key) { desc[key] = descriptor[key]; }); desc.enumerable = !!desc.enumerable; desc.configurable = !!desc.configurable; if ('value' in desc || desc.initializer) { desc.writable = true; } desc = decorators.slice().reverse().reduce(function (desc, decorator) { return decorator(target, property, desc) || desc; }, desc); if (context && desc.initializer !== void 0) { desc.value = desc.initializer ? desc.initializer.call(context) : void 0; desc.initializer = undefined; } if (desc.initializer === void 0) { Object.defineProperty(target, property, desc); desc = null; } return desc; }
 
-  actionIndex() {
-    return async (ctx, next) => {
-      const index = new Index();
-      const result = await index.getData(); // ctx.body = result.data;
-      // const data = '图书管理系统';
-
-      const data = result.data;
-      ctx.body = await ctx.render("books/pages/index", {
-        data
-      });
-    };
+let IndexController = (_dec = (0, _awilixKoa.route)('/'), _dec2 = (0, _awilixKoa.route)('/'), _dec3 = (0, _awilixKoa.GET)(), _dec(_class = (_class2 = class IndexController {
+  async actionAdd(ctx, next) {
+    ctx.body = '这是首页！';
   }
 
-  actionAdd() {
-    return async (ctx, next) => {
-      // const params = new FormData();
-      // params.append("Books[name]","测试");
-      // params.append("Books[author]","数据");
-      // const index = new Index();
-      const html = await ctx.render("books/pages/add");
-
-      if (ctx.request.header["x-pjax"]) {
-        //这个时候我们就渲染 一段json
-        //在多页的站内切页面
-        const $ = cheerio.load(html); //后台合成内容
-
-        let _result = ""; // console.log("将SSR合成SPA");
-
-        $(".pjaxcontent").each(function () {
-          _result += $(this).html();
-        });
-        $(".lazyload-js").each(function () {
-          _result += `<script src="${$(this).attr("src")}"></script>`;
-        });
-        ctx.body = _result;
-      } else {
-        console.log("落地页");
-        ctx.body = html;
-      } // const result = await index.saveData({
-      //     params
-      // });
-      // ctx.body = result;
-      // ctx.body = await ctx.render("add")
-
-    };
-  }
-
-}
-
-module.exports = IndexController;
+}, (_applyDecoratedDescriptor(_class2.prototype, "actionAdd", [_dec2, _dec3], Object.getOwnPropertyDescriptor(_class2.prototype, "actionAdd"), _class2.prototype)), _class2)) || _class);
+var _default = IndexController;
+exports.default = _default;

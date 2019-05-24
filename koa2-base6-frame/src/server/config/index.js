@@ -5,10 +5,6 @@ let config = {
     "staticDir": join(__dirname, "..", 'assets')
 };
 
-if(false) {
-    console.log('测试gulp-rollup数据清洗🚄🚄🚄🚄🚄🚄🚄🚄🚄🚄🚄🚄🚄');
-}
-
 if(process.env.NODE_ENV == "hint") {
 
 }

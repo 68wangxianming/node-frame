@@ -10,7 +10,7 @@ const SafeRequest = require('../utils/SafeRequest');
  * @class
  */
 
-class Index {
+class IndexService {
     /**
      * @constructor
      * @param {string} app KOA2的上下文
@@ -26,8 +26,9 @@ class Index {
      * getData(options)
      */
     getData(options) {
-        const safeRequest = new SafeRequest("books/index");
-        return safeRequest.fetch({});
+        // const safeRequest = new SafeRequest("books/index");
+        // return safeRequest.fetch({});
+        return ['小明','小红']
     }
 
     /**
@@ -46,7 +47,7 @@ class Index {
     }
 }
 
-module.exports = Index;
+module.exports = IndexService;
 
 
 

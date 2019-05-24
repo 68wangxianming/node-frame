@@ -21,6 +21,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "awilix": "^4.2.2",
+    "awilix-koa": "^3.1.0",
     "cheerio": "^1.0.0-rc.3",
     "cross-env": "^5.2.0",
     "form-data": "^2.3.3",
@@ -36,6 +38,7 @@
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
     "@babel/plugin-transform-modules-commonjs": "^7.4.4",
     "@babel/plugin-transform-modules-systemjs": "^7.4.0",
     "@babel/preset-env": "^7.4.3",
