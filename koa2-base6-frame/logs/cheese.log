@@ -1,0 +1,12 @@
+[2019-05-24T19:42:59.002] [ERROR] cheese - { [Error: ENOENT: no such file or directory, open '/Users/wangxianming/personal-project/node-frame/koa2-base6-frame/dist/views/books/pages/add.html']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path:
+   '/Users/wangxianming/personal-project/node-frame/koa2-base6-frame/dist/views/books/pages/add.html' }
+[2019-05-24T19:43:01.025] [ERROR] cheese - { [Error: ENOENT: no such file or directory, open '/Users/wangxianming/personal-project/node-frame/koa2-base6-frame/dist/views/books/pages/add.html']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path:
+   '/Users/wangxianming/personal-project/node-frame/koa2-base6-frame/dist/views/books/pages/add.html' }

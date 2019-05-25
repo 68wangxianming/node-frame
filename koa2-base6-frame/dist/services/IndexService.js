@@ -27,9 +27,8 @@ class IndexService {
 
 
   getData(options) {
-    // const safeRequest = new SafeRequest("books/index");
-    // return safeRequest.fetch({});
-    return ['小明', '小红'];
+    const safeRequest = new SafeRequest("books/index");
+    return safeRequest.fetch({});
   }
   /**
    * 把用户传过来的数据保存进入借口
